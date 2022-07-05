@@ -43,3 +43,6 @@
 #ulNav {
   align-content: center;
 }
+#divItemList {
+  display: inline-block;
+}

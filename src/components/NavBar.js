@@ -1,3 +1,5 @@
+import CartWidget from './CartWidget.js'
+
 const NavBar = () => {
     return (
         <>
@@ -22,6 +24,7 @@ const NavBar = () => {
                             <a className="nav-link active">Gluten Free</a>
                             </li>
                         </ul>
+                        <CartWidget/>
                     </div>
                 </div>
             </nav>
