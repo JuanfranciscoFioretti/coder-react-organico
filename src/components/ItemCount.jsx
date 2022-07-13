@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function ItemCount({initial, stock, onAdd}) {
+function ItemCount({stock}) {
     const [quantity, setQuantity] = useState(1);
 
 
@@ -9,19 +9,22 @@ function ItemCount({initial, stock, onAdd}) {
         if (quantity < stock) {
             const moreQuantity = quantity + 1
             setQuantity(moreQuantity)
-        } else {
+        } 
+        else {
             alert ("The limit stock has been surpased")
         }
         // setQuantity(quantity + 1)
     }
 
+    // const minusQuantity = quantity - 1
+
     // HACER UN IF PARA QUE NO BAJE DE 1
     const restaQuantity = () => {
-        if ((quantity < stock) && (quantity >= 1)) {
+        if (((quantity < stock) || (quantity >= 2)) && (quantity != 1)) {
             const minusQuantity = quantity - 1
         setQuantity(minusQuantity)
         } else {
-            alert ("There are no more products in the cart")
+            alert ("Can´t take more products off the cart")
         }
     }
 
