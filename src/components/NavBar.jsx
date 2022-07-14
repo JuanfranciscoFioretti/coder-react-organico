@@ -11,9 +11,6 @@ const NavBar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navBarNav">
                         <ul className="navbar-nav" id="ulNav">
-                            {/* <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li> */}
                             <li className="nav-item">
                             <a className="nav-link active" href="#">Organic</a>
                             </li>
@@ -24,7 +21,6 @@ const NavBar = () => {
                             <a className="nav-link active">Gluten Free</a>
                             </li>
                         </ul>
-                        {/* <CartWidget/> */}
                     </div>
                     <CartWidget/>
                 </div>

@@ -58,8 +58,9 @@
 }
 
 img {
-  width: 21em;
-  height: 12em;
+  width: 17em;
+  height: 10em;
+  border-radius: 2em;
 }
 
 #navTitle {
@@ -76,9 +77,25 @@ img {
   justify-content: end !important;
 }
 
-/* #divItemList {
-  display: flex !important;
-} */
+.divItem {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 1em;
+  border-color: rgb(214, 211, 211);
+  background-color: #f3f2f2ad;
+  display: block;
+  width: 20%;
+  margin-left: 4%;
+  padding-left: 1em;
+  
+  /* display: block;
+  align-content: center; */
+}
+
+
+.divItem-Count {
+  
+}
 
 
 
@@ -91,7 +108,7 @@ img {
 /* ITEM COUNT CSS */
 #divAllButtons {
   background-color: rgb(226, 226, 226);
-  width: 20%;
+  width: 50%;
   height: 130%;
   padding-top: .7em;
   border-radius: .9em;
