@@ -1,41 +1,4 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 
 /* ACÁ EMPIEZA EL CSS MÍO */
@@ -57,11 +20,11 @@
   margin-left: 3%;
 }
 
-img {
+/* img {
   width: 17em;
   height: 10em;
   border-radius: 2em;
-}
+} */
 
 #navTitle {
   margin-left: 1.2%;
@@ -93,16 +56,9 @@ img {
 }
 
 
-.divItem-Count {
+/* .divItem-Count {
   
-}
-
-
-
-
-
-
-
+} */
 
 
 /* ITEM COUNT CSS */
@@ -148,3 +104,60 @@ img {
   align-items: center;
 }
 /* ITEM COUNT CSS */
+
+
+
+/* COMIENZO DEL CSS DEL DESAFIO ITEM DETAIL */
+.divAllData {
+  display: flex;
+  background-color: rgb(232, 232, 232);
+  padding: 2.5%;
+  border-bottom: 2.5px solid rgba(107, 147, 107, 0.374);
+}
+
+.divImg {
+  width: 80%;
+}
+
+.imgDetail {
+  width: 40%;
+  border-radius: 1.2em;
+  margin-left: 7%;
+}
+
+.DetailItemCount {
+  display: inline;
+}
+
+.divItemCountDetail {
+  height: 30%;
+  margin-left: -8%;
+}
+
+.divSmallData {
+  margin-left: -32%;
+  border-left: 2.5px solid rgba(107, 147, 107, 0.374);
+  padding-left: 3%;
+}
+
+.divPrice {
+  display: flex;
+}
+
+.h6ItemDetail {
+  margin-left: 2%;
+  color: rgba(43, 190, 43, 0.8);
+}
+
+.pMediosDePago {
+  color: rgb(133, 133, 248);
+  text-decoration: underline;
+}
+
+.h2Description {
+  color: rgb(43, 42, 42);
+}
+
+.h3Description {
+  color: rgb(59, 59, 59);
+}

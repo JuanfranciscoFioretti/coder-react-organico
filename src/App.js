@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import Products from './containers/Products';
-import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './containers/ItemDetailContainer';
+// import ItemCount from './components/ItemCount';
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
     <div className="App">
       <NavBar/>
       {/* <Products/> */}
-      <ItemListContainer/>
+      {/* <ItemListContainer/> */}
+      <ItemDetailContainer/>
+
     </div>
   );
 }
