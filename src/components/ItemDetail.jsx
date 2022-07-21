@@ -23,7 +23,7 @@ const ItemDetail = ({data}) => {
                     <p className='pMediosDePago'>Ver medios de pago</p>
                     <h6>Stock: {data.stock} units</h6>
                     <div className='divItemCountDetail'>
-                        <ItemCount className='DetailItemCount' stock={data.stock}/>
+                        <ItemCount className='detailItemCount' stock={data.stock}/>
                     </div>
                 </div>
             </div>

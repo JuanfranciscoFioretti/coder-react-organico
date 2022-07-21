@@ -1,4 +1,6 @@
 import React from 'react'
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from './ItemCount'
 
 
@@ -6,7 +8,7 @@ function Product(props) {
     return (
         <>
             <div className='divProduct'>
-                <div className='productImage'>
+                <div className='productImage imgDetail'>
                     <img src={props.thumbnail}></img>
                 </div>
                 <div className='productInfo'>

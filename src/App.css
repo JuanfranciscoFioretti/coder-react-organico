@@ -46,15 +46,46 @@
   border-radius: 1em;
   border-color: rgb(214, 211, 211);
   background-color: #f3f2f2ad;
-  display: block;
+  display: inline-block;
   width: 20%;
+  /* height: 430px; */
   margin-left: 4%;
   padding-left: 1em;
+  margin-bottom: 2%;
   
   /* display: block;
   align-content: center; */
 }
 
+.divItemList {
+  margin-top: 3%;
+}
+
+.h3Item {
+  margin-top: 4%;
+}
+
+.h5Item {
+  margin-bottom: 5%;
+  width: 95%;
+}
+
+.imgProduct {
+  height: 12em;
+}
+
+.containerItemButtons {
+  display: flex;
+}
+
+.itemCountHeight {
+  height: 75%;
+  margin-left: -13%;
+}
+
+.itemDetailPos {
+  margin-left: -390%;
+}
 
 /* .divItem-Count {
   
@@ -63,16 +94,18 @@
 
 /* ITEM COUNT CSS */
 #divAllButtons {
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(238, 238, 238);
   width: 50%;
   height: 130%;
-  padding-top: .7em;
+  padding-top: .4em;
+  padding-left: -1em;
   border-radius: .9em;
   border-color: #f3f1f1;
   border-style: solid;
   display: flex;
   justify-content: center;
   margin-left: 7%;
+  margin-bottom: 3%;
 }
 
 #divAllButtons-2 {
@@ -125,12 +158,13 @@
   margin-left: 7%;
 }
 
-.DetailItemCount {
+.detailItemCount {
   display: inline;
 }
 
 .divItemCountDetail {
-  height: 30%;
+  height: 45%;
+  width: 170%;
   margin-left: -8%;
 }
 
@@ -160,4 +194,14 @@
 
 .h3Description {
   color: rgb(59, 59, 59);
+}
+
+.imgProduct {
+  width: 90%;
+  border-radius: 1em;
+  margin-bottom: 4%;
+  margin-top: 2%;
+  border-radius: .8em;
+  border-color: rgba(107, 147, 107, 0.281);
+  border-style: solid;
 }

@@ -4,7 +4,6 @@ function ItemCount({stock}) {
     const [quantity, setQuantity] = useState(1);
 
 
-    // HACER UN IF PARA QUE NO PASE EL VALOR DE STOCK
     const sumaQuantity = () => {
         if (quantity < stock) {
             const moreQuantity = quantity + 1
@@ -18,7 +17,6 @@ function ItemCount({stock}) {
 
     // const minusQuantity = quantity - 1
 
-    // HACER UN IF PARA QUE NO BAJE DE 1
     const restaQuantity = () => {
         if (((quantity < stock) || (quantity >= 2)) && (quantity != 1)) {
             const minusQuantity = quantity - 1
@@ -28,7 +26,6 @@ function ItemCount({stock}) {
         }
     }
 
-    // DEFINIRLO EN EL PADRE
     const productAdded = () => {
         alert("Item has been added to the cart")
     }
