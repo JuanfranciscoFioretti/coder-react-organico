@@ -144,6 +144,8 @@ const ItemListContainer = () => {
         }
 
     }, [id])
+
+
     return (
     // <div id='divItemList'>1</div>
         <>

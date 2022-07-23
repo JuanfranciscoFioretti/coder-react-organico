@@ -133,7 +133,7 @@ const ItemDetailContainer = () => {
         })
         getData.then(resolve => setData(resolve))
         // getData.then((response) => 
-        //     setData(response.find((product) => product.id === id)))
+        //     setData(response.find((products) => products.id === id)))
     }, [id]);
 
     return (

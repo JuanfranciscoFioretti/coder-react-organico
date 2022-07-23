@@ -20,7 +20,7 @@ const Item = ({info}) => {
                         </div>
                         <div className='col-md-1'>
                             <div className='itemDetailPos'>
-                                <Link to='/item/:id'><ItemDetailButton/></Link>
+                                <Link to={`/item/${info.id}`}><ItemDetailButton/></Link>
                             </div>
                         </div>
                     </div>

@@ -205,3 +205,16 @@
   border-color: rgba(107, 147, 107, 0.281);
   border-style: solid;
 }
+
+
+
+/* CSS DEL LOADER ITEM LIST */
+
+.loaderItemList {
+  display: flex;
+  /* align-content: center;
+  justify-content: center; */
+  margin-left: 50vw;
+  margin-top: 35vh;
+}
+
