@@ -121,24 +121,23 @@ const products = [
 
 const ItemDetailContainer = () => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
 
     const { id } = useParams();
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
+        const getData = new Promise(res => {
             setTimeout(() => {
-                resolve(products)
-            }, 3500);
+                res(products.find(product => product.id === parseInt(id)) )
+            }, 2500);
         })
-        getData.then(resolve => setData(resolve))
-        // getData.then((response) => 
-        //     setData(response.find((products) => products.id === id)))
+        // console.log(getData)
+        getData.then(res => setData(res))
+        getData.catch(err => console.log(err))
     }, [id]);
-
     return (
         <>
-            <ItemDetail data={data}/>
+            <ItemDetail product={data}/>
         </>
     )
 }

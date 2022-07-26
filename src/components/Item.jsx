@@ -11,7 +11,7 @@ const Item = ({info}) => {
                 <img src={info.image} className="imgProduct" alt="" />
                 <div className='divItem-Count'>
                     <h5 className='h5Item'>{info.description}</h5>
-                    <h4>Price : ${info.price}</h4>
+                    <h4>Price : $ {info.price}</h4>
                     <div className='container containerItemButtons'>
                         <div className='col-md-11'>
                             <div className='itemCountHeight' >
