@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 
-function ItemCount({stock}) {
+function ItemCount({stock, onAdd}) {
     const [quantity, setQuantity] = useState(1);
 
+    // const [goToCart, setGoToCart] = useState(false);
 
     const sumaQuantity = () => {
         if (quantity < stock) {
@@ -12,10 +13,7 @@ function ItemCount({stock}) {
         else {
             alert ("The limit stock has been surpased")
         }
-        // setQuantity(quantity + 1)
     }
-
-    // const minusQuantity = quantity - 1
 
     const restaQuantity = () => {
         if (((quantity < stock) || (quantity >= 2)) && (quantity != 1)) {
@@ -26,9 +24,13 @@ function ItemCount({stock}) {
         }
     }
 
-    const productAdded = () => {
+    const addProduct = () => {
         alert("Item has been added to the cart")
     }
+
+    // const onAdd = (quantity) => {
+    //     setGoToCart(true);
+    // }
 
     return (
         <>
@@ -38,7 +40,7 @@ function ItemCount({stock}) {
                         <button className='btn btn-outline-primary' onClick={restaQuantity}>-</button><div id='divQuantity'>{quantity}</div><button className='btn btn-outline-primary' onClick={sumaQuantity}>+</button>
                     </div>
                     <div id='divChart'>
-                        <button className='btn btn-outline-secondary' onClick={productAdded}>Add to cart</button>
+                        <button className='btn btn-outline-secondary' onClick={onAdd}>Add to cart</button>
                     </div>
                 </div>
             </div>

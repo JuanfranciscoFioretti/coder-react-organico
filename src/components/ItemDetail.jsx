@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react'
-// import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount'
+import Cart from './Cart';
+// import { useParams } from 'react-router';
 
 const ItemDetail = ({product}) => {
+
+    const [goToCart, setGoToCart] = useState(false);
+
+    const onAdd = (quantity) => {
+        setGoToCart(true);
+    }
 
     const [loading, setLoading] = useState(false);
 
@@ -47,7 +55,14 @@ const ItemDetail = ({product}) => {
                         <p className='pMediosDePago'>Ver medios de pago</p>
                         <h6>Stock: {product.stock} units</h6>
                         <div className='divItemCountDetail'>
-                            <ItemCount className='detailItemCount' stock={product.stock}/>
+                            
+                                {
+                                    goToCart 
+                                    ? <Link to='/cart'><h5 className='linkGoToCart'>Go to cart</h5></Link>
+                                    : <ItemCount className='detailItemCount' stock={product.stock} onAdd={onAdd}/>
+                                }
+                            
+                            
                         </div>
                     </div>
                 </div>
