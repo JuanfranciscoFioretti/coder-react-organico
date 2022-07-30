@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PuffLoader from "react-spinners/PuffLoader";
+
 import ItemCount from './ItemCount'
-import Cart from './Cart';
-// import { useParams } from 'react-router';
+
+import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react'
+import { CartContext } from './CartContext';
+
+
 
 const ItemDetail = ({product}) => {
-
     const [goToCart, setGoToCart] = useState(false);
-
-    const onAdd = (quantity) => {
-        setGoToCart(true);
-    }
 
     const [loading, setLoading] = useState(false);
 
+    const context = useContext(CartContext)
+    
+    const onAdd = (quantity) => {
+        setGoToCart(true);
+        // setGoToCart(quantity)
+        context.addToCart(product)
+    }
+    
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
@@ -49,11 +55,11 @@ const ItemDetail = ({product}) => {
                             <p>{product.bigDescription}</p>
                         </div>
                         <div className='divPrice'>
-                            <h5>Price: ${product.price}</h5>
-                            <h6 className='h6ItemDetail'>{product.discount} OFF</h6>
+                            <h4>Price: ${product.price}</h4>
+                            <h6 className='h6ItemDetail'>{product.discount}% OFF</h6>
                         </div>
                         <p className='pMediosDePago'>Ver medios de pago</p>
-                        <h6>Stock: {product.stock} units</h6>
+                        <h5>Stock: {product.stock} units</h5>
                         <div className='divItemCountDetail'>
                             
                                 {

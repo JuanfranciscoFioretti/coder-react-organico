@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from './ItemCount'
+
 import ItemDetailButton from './ItemDetailButton'
 
 const Item = ({info}) => {
+
     return (
         <>
             <div className='divItem'>
@@ -12,10 +13,11 @@ const Item = ({info}) => {
                 <div className='divItem-Count'>
                     <h5 className='h5Item'>{info.description}</h5>
                     <h4>Price : $ {info.price}</h4>
+                    <h5>Stock : {info.stock} units</h5>
                     <div className='container containerItemButtons'>
                         <div className='col-md-11'>
                             <div className='itemCountHeight' >
-                                <ItemCount stock={info.stock}/>
+                                {/* <ItemCount stock={info.stock}/> */}
                             </div>
                         </div>
                         <div className='col-md-1'>
