@@ -20,7 +20,7 @@ const ItemDetail = ({product}) => {
     const onAdd = (quantity) => {
         setGoToCart(true);
         // setGoToCart(quantity)
-        context.addToCart(product)
+        context.addToCart(product, quantity)
     }
     
     useEffect(() => {

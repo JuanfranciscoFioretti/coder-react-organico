@@ -141,7 +141,7 @@ const ItemListContainer = () => {
             const getData = new Promise(resolve => {
                 setTimeout(() => {
                     resolve(products)
-                }, 2500);
+                }, 1500);
             })
             getData.then(res => setData(res))
             getData.catch(err => console.log(err))
@@ -149,7 +149,7 @@ const ItemListContainer = () => {
             const getData = new Promise(resolve => {
                 setTimeout(() => {
                     resolve(products.filter(product => product.category === id) )
-                }, 2500);
+                }, 1500);
             })
             getData.then(res => setData(res))
             getData.catch(err => console.log(err))

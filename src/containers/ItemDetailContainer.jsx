@@ -141,7 +141,7 @@ const ItemDetailContainer = () => {
         const getData = new Promise(res => {
             setTimeout(() => {
                 res(products.find(product => product.id === parseInt(id)) )
-            }, 2500);
+            }, 1500);
         })
         // console.log(getData)
         getData.then(res => setData(res))
