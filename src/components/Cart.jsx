@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
-import { CartContext } from './CartContext'
+import { CartContext, useCartContext } from './CartContext';
+import { Link } from 'react-router-dom';
+
 
 
 const Cart = () => {
     const context = useContext(CartContext)
     console.log(context.cartList);
+
+    const { cartList, totalPrice, totalProducts } = useCartContext();
 
     return (
         <>  
@@ -39,6 +43,30 @@ const Cart = () => {
                     </div>
                 </div>
                 ))
+            }
+            {
+                context.cartList.length === 0 ?
+
+                <div id='divCartEmpty'>
+                    <div id='divCartEmptyTitle'>
+                        <h4 id='h4Empty'>Oh, no! Your cart is empty!</h4>
+                        <Link to='/'><button className='btn btn-outline-success'>Go back to home</button></Link>
+                        
+                    </div>
+                    <div>
+                        <img src="https://vtcllp.com/images/ecommimg/empty-cart.png" alt="" />
+                    </div>
+                </div>
+
+                :
+                <div className='divTotalProducts'>
+                    <div className='divTotalProducts2'>
+                        <h4 className='TotalProductsH4'>You have {totalProducts()} products</h4>
+                        <hr />
+                        <h4 className='TotalProductsH4'>Your total is ${totalPrice()}</h4>
+                    </div>
+                </div>
+
             }
             
         </>

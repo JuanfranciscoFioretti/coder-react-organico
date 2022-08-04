@@ -257,3 +257,46 @@
 body {
   overflow-x: hidden;
 }
+
+
+#divCartEmpty {
+  display: flex;
+  align-items: center;
+  margin-left: 6%;
+}
+
+#divCartEmptyTitle {
+  margin-right: 3%;
+}
+
+#h4Empty {
+  margin-bottom: 8%;
+}
+
+.enabledCart {
+  color: green !important;
+  background-color: green !important;
+}
+
+.divTotalProducts {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.divTotalProducts2 {
+  border-bottom: 2.5px solid rgba(107, 147, 107, 0.374);
+  border-top: 2.5px solid rgba(107, 147, 107, 0.374);
+  border-left: 2.5px solid rgba(107, 147, 107, 0.374);
+  border-right: 2.5px solid rgba(107, 147, 107, 0.374);
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  border-radius: 3em;
+  padding: 4%;
+}
+
+.TotalProductsH4 {
+  color: rgb(87, 78, 78);
+}

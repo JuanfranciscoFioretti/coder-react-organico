@@ -39,7 +39,6 @@ const ItemList = ({data = []}) => {
                             info={card}
                         />)
                     }
-                    {/* <Item/> */}
                 </div>
             }
         </>

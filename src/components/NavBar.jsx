@@ -1,7 +1,10 @@
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { CartContext } from './CartContext'
 
 const NavBar = () => {
+    const context = useContext(CartContext)
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,7 +26,14 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
-                    <CartWidget/>
+                    {
+                        context.cartList.length >= 1 ?
+                            <Link to='/cart'>
+                                <CartWidget className='enabledCart'/>
+                            </Link>
+                            :
+                            <h4></h4>
+                    }
                 </div>
             </nav>
         </>

@@ -1,131 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router';
 import ItemList from './ItemList';
-
-const products = [
-    {
-        name: "Irish Green Tea",
-        id: 107,
-        stock: 50,
-        price: 570,
-        discount: 15,
-        category: "Organic",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://thumbs.dreamstime.com/b/polvo-matcha-t%C3%A9-verde-en-taz%C3%B3n-con-hoja-aislada-blanco-sobre-fondo-174849687.jpg"
-    },
-    {
-        name: "Natural Grain",
-        id: 90,
-        stock: 100,
-        price: 1300,
-        discount: 15,
-        category: "Gluten-free",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://img.freepik.com/foto-gratis/granola-tazon-sobre-fondo-blanco-comida-sana-vista-lateral_538816-8.jpg"
-    },
-    {
-        name: "Strawberries",
-        id: 72,
-        stock: 80,
-        price: 970,
-        discount: 15,
-        category: "Organic",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://www.verduleriadonaamalia.cl/wp-content/uploads/2020/04/frutillas.jpg"
-    },
-    {
-        name: "Nuts",
-        id: 122,
-        stock: 100,
-        price: 500,
-        discount: 15,
-        category: "Vegan",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://thumbs.dreamstime.com/b/mezcla-de-frutos-secos-aislados-sobre-fondo-blanco-vista-superior-214104715.jpg"
-    },
-    {
-        name: "Nutritive Flour",
-        id: 43,
-        stock: 30,
-        price: 730,
-        discount: 15,
-        category: "Organic",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://st.depositphotos.com/2427951/4724/i/600/depositphotos_47243765-stock-photo-whole-wheat-flour.jpg"
-    },
-    {
-        name: "Plants burguer",
-        id: 49,
-        stock: 30,
-        price: 425,
-        discount: 15,
-        category: "Vegan",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://media.istockphoto.com/photos/vegan-burger-with-tofu-and-vegetables-isolated-on-white-background-picture-id1091013902?k=20&m=1091013902&s=170667a&w=0&h=EMR9Lies20fZ4cl7A3g4iewTkNF2fA4hVQ5R3xFFowU="
-    },
-    {
-        name: "Vegan tofu",
-        id: 23,
-        stock: 30,
-        price: 230,
-        discount: 15,
-        category: "Vegan",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://thumbs.dreamstime.com/b/trozos-de-delicioso-tofu-y-soja-sobre-fondo-blanco-214314727.jpg"
-    },
-    {
-        name: "Gluten free bread",
-        id: 21,
-        stock: 30,
-        price: 300,
-        discount: 15,
-        category: "Gluten-free",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiRUtYWES_1qKEDzu2DVoi8Ou4vUNTemB5zQ&usqp=CAU"
-    },
-    {
-        name: "Spinach discs",
-        id: 12,
-        stock: 30,
-        price: 525,
-        discount: 15,
-        category: "Vegan",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://cdn.shopify.com/s/files/1/0581/7407/9167/products/WhatsAppImage2021-09-07at14.54.49_1_1500x.jpg?v=1631045962"
-    },
-    {
-        name: "Almond milk",
-        id: 69,
-        stock: 30,
-        price: 320,
-        discount: 15,
-        category: "Vegan",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://thumbs.dreamstime.com/b/vaso-de-leche-almendra-rodeado-almendras-aisladas-sobre-fondo-blanco-214384870.jpg"
-    },
-    {
-        name: "Organic onion",
-        id: 86,
-        stock: 30,
-        price: 120,
-        discount: 15,
-        category: "Organic",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://thumbs.dreamstime.com/b/cebolla-roja-y-rebanada-aisladas-en-el-fondo-blanco-con-acortar-p-94427096.jpg"
-    },
-    {
-        name: "Chocolate cookies",
-        id: 41,
-        stock: 30,
-        price: 278,
-        discount: 15,
-        category: "Gluten-free",
-        description: "Lorem, ipsum dolor sit amet wfefwg consectetur amet consecteturamet consectetur",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWPiayS06_i3aCi1b9c27WCHYtIgM4d5RhasxX5UT0jQwojrOsYttZYXadbGPlB83O4nw&usqp=CAU"
-    },
-
-
-]
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { db } from '../utils/firebaseConfig';
 
 
 
@@ -135,31 +12,57 @@ const ItemListContainer = () => {
 
     const { id } = useParams();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (id === undefined) {
-            const getData = new Promise(resolve => {
-                setTimeout(() => {
-                    resolve(products)
-                }, 1500);
-            })
-            getData.then(res => setData(res))
-            getData.catch(err => console.log(err))
+    //     const fireStoreFetch = async () => {
+    //         const querySnapshot = await getDocs(collection(db, "products"));
+    //         const dataFromFireStore = querySnapshot.docs.map((doc) => ({
+    //             id: doc.id,
+    //             ...doc.data()
+    //         }))
+    //         return dataFromFireStore
+            
+    //     }
+    //     fireStoreFetch()
+    //     .then(result => setData(result))
+    //     .catch(err => console.log(err))
+
+    //     const querydb = getFirestore();
+    //     const queryCollection = collection(querydb, 'products');
+        
+    // }, [id])
+
+    useEffect (() => {
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'products');
+        if (id) {
+            const queryFilter = query(
+                queryCollection,
+                where('category', '==', id)
+            );
+            getDocs(queryFilter).then((res) => 
+                setData (
+                    res.docs.map((product) => ({
+                        id: product.id,
+                        ...product.data()
+                    }))
+                )
+            );
         } else {
-            const getData = new Promise(resolve => {
-                setTimeout(() => {
-                    resolve(products.filter(product => product.category === id) )
-                }, 1500);
-            })
-            getData.then(res => setData(res))
-            getData.catch(err => console.log(err))
-        }
-
-    }, [id])
+            getDocs(queryCollection)
+                .then((res) => 
+                    setData(
+                        res.docs.map((product) => ({
+                            id: product.id,
+                            ...product.data()
+                        }))
+                    )
+                )
+            }
+        }, [id])
 
 
     return (
-    // <div id='divItemList'>1</div>
         <>
             <div id='divItemList'>
                 <ItemList data={data}/>
