@@ -12,26 +12,6 @@ const ItemListContainer = () => {
 
     const { id } = useParams();
 
-    // useEffect(() => {
-
-    //     const fireStoreFetch = async () => {
-    //         const querySnapshot = await getDocs(collection(db, "products"));
-    //         const dataFromFireStore = querySnapshot.docs.map((doc) => ({
-    //             id: doc.id,
-    //             ...doc.data()
-    //         }))
-    //         return dataFromFireStore
-            
-    //     }
-    //     fireStoreFetch()
-    //     .then(result => setData(result))
-    //     .catch(err => console.log(err))
-
-    //     const querydb = getFirestore();
-    //     const queryCollection = collection(querydb, 'products');
-        
-    // }, [id])
-
     useEffect (() => {
         const querydb = getFirestore();
         const queryCollection = collection(querydb, 'products');

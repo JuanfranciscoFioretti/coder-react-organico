@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 import { useContext } from 'react';
-// import Cart from './Cart';
+
 export const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -25,33 +25,28 @@ const CartContextProvider = ({children}) => {
         setCartList(newState)
     }
 
-    const clearAll = () => {
-        setCartList([]);
-    }
-
     
-    // const productTotalPrice = () => { 
-    //     const compraTotal = cartList.reduce((acc, products) => (acc + products.price * products.quantity), 0)      
-    //     return compraTotal;    
-    // }
-
     const totalPrice = () => {
         return cartList.reduce((prev, act) => prev + act.quantity * act.price, 0);
     };
-
+    
     const totalProducts = () => {
         cartList.reduce(
             (acc, actualProduct) => acc + actualProduct.quantity, 0,
-        );
-    }
-    
+            );
+        }
+        
     const cartNotification = () => {
         let cantidadBadge = cartList.map(products => products.quantity);
         return cantidadBadge.reduce(((previusValue, currentValue) => previusValue + currentValue), 0) 
     }
 
-    return (
-        <CartContext.Provider value={{cartList, addToCart, isInCart, removeProduct, clearAll, totalPrice, totalProducts, cartNotification }}>
+    const clearAll = () => {
+        setCartList([]);
+    }
+        
+        return (
+            <CartContext.Provider value={{cartList, addToCart, isInCart, removeProduct, clearAll, totalPrice, totalProducts, cartNotification }}>
             {children}
         </CartContext.Provider>
     )

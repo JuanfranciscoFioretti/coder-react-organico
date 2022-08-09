@@ -300,3 +300,7 @@ body {
 .TotalProductsH4 {
   color: rgb(87, 78, 78);
 }
+
+#btnFinish {
+  margin-top: 14%;
+}
