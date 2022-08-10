@@ -4,9 +4,7 @@ import '../App.css';
 function ItemCount({stock, onAdd}) {
     const [quantity, setQuantity] = useState(1);
 
-    const [cart, setCart] = useState([]);
-
-    // const [goToCart, setGoToCart] = useState(false);
+    // const [cart, setCart] = useState([]);
 
     const sumaQuantity = () => {
         if (quantity < stock) {

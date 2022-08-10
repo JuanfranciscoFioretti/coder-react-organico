@@ -3,8 +3,6 @@ import { CartContext, useCartContext } from './CartContext';
 import { Link } from 'react-router-dom';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
-
-
 const Cart = () => {
     const context = useContext(CartContext)
     console.log(context.cartList);
@@ -86,7 +84,7 @@ const Cart = () => {
                     <div className='divTotalProducts2'>
                         <h4 className='TotalProductsH4'>You have {totalProducts()} products</h4>
                         <hr />
-                        <h4 className='TotalProductsH4'>Your total is ${totalPrice()}</h4>
+                        <h4 className='TotalProductsH4'>Your total is $ {totalPrice()}</h4>
                         <button onClick={finishBuy} className='btn btn-outline-success' id='btnFinish'>Finish your purchase</button>
                     </div>
                 </div>

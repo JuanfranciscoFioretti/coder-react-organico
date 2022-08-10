@@ -64,7 +64,7 @@ const ItemDetail = ({product}) => {
                             
                                 {
                                     goToCart 
-                                    ? <Link to='/cart'><h5 className='linkGoToCart'>Go to cart</h5></Link>
+                                    ? <Link to='/cart'><button className='btn btn-outline-success linkGoToCart'>Go to cart</button></Link>
                                     : <ItemCount className='detailItemCount' stock={product.stock} onAdd={onAdd}/>
                                 }
                             

@@ -8,6 +8,7 @@ const CartWidget = () => {
     // const [cartNumber, setCartNumber] = useState (4);
     const context = useContext(CartContext);
 
+
     return (
         <>
             <div id='divCart'>
