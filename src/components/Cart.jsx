@@ -82,7 +82,7 @@ const Cart = () => {
                 :
                 <div className='divTotalProducts'>
                     <div className='divTotalProducts2'>
-                        <h4 className='TotalProductsH4'>You have {totalProducts()} products</h4>
+                        <h4 className='TotalProductsH4'>You have {parseInt(totalProducts())} products</h4>
                         <hr />
                         <h4 className='TotalProductsH4'>Your total is $ {totalPrice()}</h4>
                         <button onClick={finishBuy} className='btn btn-outline-success' id='btnFinish'>Finish your purchase</button>

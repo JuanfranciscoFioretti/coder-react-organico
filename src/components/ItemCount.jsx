@@ -14,7 +14,10 @@ function ItemCount({stock, onAdd}) {
         else {
             alert ("The limit stock has been surpased")
         }
+        console.log(quantity)
     }
+    
+
 
     const restaQuantity = () => {
         if (((quantity < stock) || (quantity >= 2)) && (quantity != 1)) {

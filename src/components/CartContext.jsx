@@ -40,9 +40,8 @@ const CartContextProvider = ({children}) => {
     //     }
 
     const totalProducts = () => {
-        let quantity = cartList.map(products => products.quantity);
+        let quantity = cartList.map(product => product.quantity);
         return quantity.reduce(((previusValue, currentValue) => previusValue + currentValue), 0)
-        console.log(totalProducts());
     }
         
     const cartNotification = () => {
